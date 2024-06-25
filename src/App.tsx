@@ -13,6 +13,7 @@ import CreateProduct from "./page/CreateProduct";
 import EditProduct from "./page/EditProduct";
 import Allaitem from "./page/AllProduct";
 import ProductCart from "./page/ProductCart";
+import SupportList from "./page/SupportList";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/new/product" element={<CreateProduct />} />
             <Route path="/product/edit/:id" element={<EditProduct />} />
             <Route path="/product/brands" element={<Allaitem />} />
+            <Route path="/dashboard/contact" element={<SupportList />} />
             <Route path="/product/brands/checkout/:id" element={<ProductCart />} />
           </Routes>
         </BrowserRouter>

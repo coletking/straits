@@ -44,7 +44,7 @@ const Banner: React.FC<CarouselProps> = ({ images, images2, interval = 3000 }) =
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {currentImages.map((image, index) => (
-          <div key={index} className="w-full h-full flex-shrink-0">
+          <div key={index} className="w-full md:h-[80vh] flex-shrink-0">
             <img
               src={image}
               alt={`Slide ${index + 1}`}

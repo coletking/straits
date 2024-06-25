@@ -25,12 +25,16 @@ function ProductCart() {
   useEffect(() => {
     getProduct();
   }, []);
-
   return (
     <div>
+      {!pro && <div className="h-[100vh] flex justify-center items-center text-black">Please Wait .....</div>}
+      {pro && 
+      <>
       <Navbar />
-      {pro && <ProductPage product={pro as Product} />}
+      <ProductPage product={pro as Product} />
       <Footer />
+      </>
+      }
     </div>
   );
 }

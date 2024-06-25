@@ -90,7 +90,7 @@ export const getMessages = async (id, cb) => {
     item.id = doc.id;
     items.push(timestampDate.parseTimestampToDate(item));
   });
-  
+ 
   cb(items);
 };
 

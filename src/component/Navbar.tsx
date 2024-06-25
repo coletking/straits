@@ -26,33 +26,16 @@ export default function Navbar() {
               </Link>
             </li>
 
-            {/* Dropdown structure */}
-            <li className="nav-item dropdown">
-              <span className="nav-links" onClick={closeMobileMenu}>
-                <Link to="/rentals" className="nav-links" onClick={closeMobileMenu}>
-                  Rentals
-                </Link>
-              </span>
-              <ul className="dropdown-menu">
-                <li className="dropdown-item">
-                  <Link
-                    to="/rentals"
-                    className="nav-links"
-                    onClick={closeMobileMenu}
-                  >
-                    Student Band
-                  </Link>
-                </li>
-                <li className="dropdown-item">
-                  <Link
-                    to="/rentals"
-                    className="nav-links"
-                    onClick={closeMobileMenu}
-                  >
-                    Community Band
-                  </Link>
-                </li>
-              </ul>
+      
+
+            <li className="nav-item">
+              <Link
+                to="/rentals"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Rentals
+              </Link>
             </li>
 
             <li className="nav-item">

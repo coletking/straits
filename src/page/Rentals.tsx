@@ -11,7 +11,7 @@ function Rentals() {
     <div>
       <Navbar />
       <RentalsBanner/>
-      <RentNow/>
+      {/* <RentNow/> */}
       <CallNow/>
       <NewsLetter/>
       <Footer/>

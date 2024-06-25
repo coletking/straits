@@ -11,15 +11,12 @@ const Footer: React.FC = () => {
             </h4>
             <ul>
               <li className="py-1 hover:underline">About Us</li>
-              <li className="py-1 hover:underline">Shipping</li>
-              <li className="py-1 hover:underline">Service & Repairs</li>
-              <li className="py-1 hover:underline">Financing</li>
-              <li className="py-1 hover:underline">Contact Email</li>
-              <li className="py-1 hover:underline">Returns</li>
-              <li className="py-1 hover:underline">Gift Cards</li>
+              <li className="py-1 hover:underline">Rentals</li>
+              <li className="py-1 hover:underline">Shop</li>
+              <li className="py-1 hover:underline">Contact Us</li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h4 className="text-lg text-green-100 font-semibold mb-4">
               SHOP CATEGORIES
             </h4>
@@ -34,11 +31,11 @@ const Footer: React.FC = () => {
               <li className="py-1 hover:underline">Effects</li>
               <li className="py-1 hover:underline">Pro-Audio</li>
             </ul>
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             <h4 className="text-lg text-green-100  font-semibold mb-4">
               BAND AND ORCHESTRA
-            </h4>
+            </h4
             <ul>
               <li className="py-1 hover:underline">Band Rentals</li>
               <li className="py-1 hover:underline">Orchestra Rentals</li>
@@ -49,8 +46,8 @@ const Footer: React.FC = () => {
               <li className="py-1 hover:underline">Shop Orchestra</li>
               <li className="py-1 hover:underline">Shop Print Music Methods</li>
             </ul>
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             <h4 className="text-lg text-green-100  font-semibold mb-4">
               PIANOS
             </h4>
@@ -63,7 +60,7 @@ const Footer: React.FC = () => {
               <li className="py-1 hover:underline">Clavinovas</li>
               <li className="py-1 hover:underline">Piano Services</li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -75,13 +72,13 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex justify-center items-center flex-col">
+        {/* <div className="flex justify-center items-center flex-col">
           <div className="">VERIFIED MERCHANT</div>
           <div className="">
             <img src="/image/p2.png" alt="" />
           </div>
           <div className="text-xs text-center m-auto">StraitMusic.com is registered with the Authorize.Net Verified Merchant Seal program.</div>
-        </div>
+        </div> */}
 
 
         <div className="flex justify-center items-center flex-col">

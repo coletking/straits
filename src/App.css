@@ -54,7 +54,7 @@
   margin-left: 0.5rem;
 }
 .navbar-logo img{
-width: 8rem;
+width: 12rem;
 flex-shrink: 0;
 margin-left: 2rem;
 }
@@ -265,6 +265,12 @@ margin-left: 2rem;
     color: #1888ff;
     transition: 250ms;
   }
+
+  .navbar-logo img{
+    width: 8rem;
+    flex-shrink: 0;
+    margin-left: 2rem;
+    }
 }
 
 @media screen and (max-width: 480px) {

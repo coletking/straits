@@ -14,15 +14,17 @@ const AboutSection: React.FC = () => {
                 <h2 className="text-4xl font-bold pb-4">We are leader in <br /> Industrial market Since 1992</h2>
               </div>
               <div className="text text-gray-600 mt-8">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Strings Pro Store is your one stop Shop for sales of new and used string instruments. 
+We are a top player in the sales and rental of string instruments within and outside Colorado.
+We provide excellent customer service and support to ensure a wonderful purchase and renting experience. 
               </div>
               <ul className="list-style-one my-8 space-y-3">
-                <li>Lorem Ipsum is simply dummy tex</li>
-                <li>Consectetur adipisicing elit</li>
-                <li>Sed do eiusmod tempor incididunt</li>
+                <li>Sales of New Strings Instruments </li>
+                <li>Sales of Used Strings Instruments</li>
+                <li>String Instrument Rentals</li>
               </ul>
               <div className="btn-box">
-                <a href="#" className="theme-btn btn-style-one text-white bg-red-500 py-2 px-8 hover:bg-blue-900">Contact Us</a>
+                <a href="/contact-us" className="theme-btn btn-style-one text-white bg-red-500 py-2 px-8 hover:bg-blue-900">Contact Us</a>
               </div>
             </div>
           </div>

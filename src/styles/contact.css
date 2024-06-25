@@ -76,7 +76,7 @@ height: 120px;
 padding: 12px 16px;
 border-radius: 4px;
 }
-.single-input-fieldsbtn input[type="submit"] {
+.single-input-fieldsbtn button {
 background: #fda40b none repeat scroll 0 0;
 color: #fff;
 display: inline-block;
@@ -87,7 +87,7 @@ width: 150px;
 margin-top: 20px;
 font-size: 16px;
 }
-.single-input-fieldsbtn input[type="submit"]:hover{background:#071c34;transition: all 0.4s ease-in-out 0s;border-color:#071c34}
+.single-input-fieldsbtn button:hover{background:#071c34;transition: all 0.4s ease-in-out 0s;border-color:#071c34}
 .single-input-field  h4 {
 color: #464646;
 text-transform: capitalize;

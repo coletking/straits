@@ -7,7 +7,13 @@ import AdminHeader from "../component/AdminHeader";
 import { Link } from "react-router-dom";
 import { Product } from "../Model/prodduct";
 import Modal from "../component/Modal";
-import { collection, deleteDoc, getDocs, query, where } from "firebase/firestore";
+import {
+  collection,
+  deleteDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import { database } from "../firebase";
 const UserTable = () => {
   const [users, setUsers] = useState<Product[]>([]);
@@ -15,7 +21,7 @@ const UserTable = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isFetching, setIsFetching] = useState<boolean>(false);
   const [debouncedScroll, setDebouncedScroll] = useState<number | null>(null);
-  const [item,setitem] =  useState<Product>()
+  const [item, setitem] = useState<Product>();
   const [show, setShow] = useState(false);
   const [search, setsearch] = useState("");
 
@@ -72,41 +78,59 @@ const UserTable = () => {
   }, [hasMore, isFetching, users.length, debouncedScroll]);
 
   const Togglemodalview = useCallback(
-    (item:Product) => () => {
-  
+    (item: Product) => () => {
       setitem(item as Product);
       handleOpen();
     },
     []
   );
 
-
   const handleOpen = () => {
     setShow(!show);
   };
 
   const handleClose = () => {
+     fetchUsers(1);
     setShow(false);
   };
 
-  const handleDeletePost = async() => {
-    const d = query(collection(database, 'posts'), where('id', '==', item?.id));
-    const docSnap = await getDocs(d);
-    docSnap.forEach((doc) => {
-      deleteDoc(doc.ref);
-    });
-    setUsers([])
-    fetchUsers(1)
-    handleClose()
-  return
-  }
+  const handleDeletePost = async () => {
+    
+    setIsLoading(true);
+    try {
+      const q = query(
+        collection(database, "products"),
+        where("id", "==", item?.id)
+      );
+      const querySnapshot = await getDocs(q);
+
+      const deletePromises = querySnapshot.docs.map((doc) =>
+        deleteDoc(doc.ref)
+      );
+
+      await Promise.all(deletePromises);
+    } catch (error) {
+      console.error("Error deleting document: ", error);
+    } finally {
+      setIsLoading(false);
+      handleClose();
+      setUsers([])
+      fetchUsers(1);
+    }
+    return;
+  };
 
   return (
     <>
       <AdminHeader />
-      <Modal show={show} onClose={handleClose} onDelete={handleDeletePost} item={item as Product}>
+      <Modal
+        show={show}
+        onClose={handleClose}
+        onDelete={handleDeletePost}
+        item={item as Product}
+      >
         <div className="p-2">
-        <div className="mb-4">
+          <div className="mb-4">
             <strong>Product Code:</strong> {item?.productCode}
           </div>
           <div className="mb-4">
@@ -123,24 +147,27 @@ const UserTable = () => {
           <div className="mb-4">
             <strong>Product discount:</strong> {item?.productDiscount}
           </div>
-    
+
           <div className="mb-4">
-            <strong>Description:</strong> 
-            <div dangerouslySetInnerHTML={{ __html: item?.productDescription as string }} />
+            <strong>Description:</strong>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: item?.productDescription as string,
+              }}
+            />
           </div>
 
           <div className="mb-4">
-            <strong>Image:</strong> 
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
-           {item?.productImage.map((val, i)=>{
-              return(
-                <div className="" key={i}>
-                     <img src={val} alt="" className="h-[40vh]"/>
-                </div>
-              )
-            }) }
-           </div>
-         
+            <strong>Image:</strong>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
+              {item?.productImage.map((val, i) => {
+                return (
+                  <div className="" key={i}>
+                    <img src={val} alt="" className="h-[40vh]" />
+                  </div>
+                );
+              })}
+            </div>
           </div>
           {/* Add your media viewer and other components here */}
         </div>
@@ -188,9 +215,7 @@ const UserTable = () => {
                   discount
                 </th>
 
-                <th className="text-start text-[0.8rem] md:text-sm">
-                  Action
-                </th>
+                <th className="text-start text-[0.8rem] md:text-sm">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -249,7 +274,9 @@ const UserTable = () => {
                       </td>
 
                       <td className=" text-[0.8rem] md:text-sm">
-                        <button onClick={Togglemodalview(user as Product)}>View</button>
+                        <button onClick={Togglemodalview(user as Product)}>
+                          View
+                        </button>
                       </td>
                     </tr>
                   ))

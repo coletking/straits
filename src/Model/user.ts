@@ -9,3 +9,15 @@ export interface User {
     wallet: number; // User's wallet balance
     created: any; // Timestamp when the user was created
   }
+
+
+  export interface messages {
+    id: string
+    name:string
+    phone:string
+    subject:string
+    email:string
+    message:string
+    isRead:boolean
+    createdAt: any,
+  }

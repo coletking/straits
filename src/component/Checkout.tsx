@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { convertHtmlToText } from "../Services/Utility";
 import { Product } from "../Model/prodduct";
+import { useNavigate } from "react-router-dom";
 
 interface ProductPageProps {
   product: Product;
@@ -9,6 +10,7 @@ interface ProductPageProps {
 
 const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const navigate = useNavigate()
   const plainTextDescription = convertHtmlToText(product.productDescription);
 
   const handleThumbnailClick = (index: number) => {
@@ -27,11 +29,14 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
     }
   };
 
+  const handleContact = ()=>{
+   navigate("/contact-us")
+  }
   return (
-    <div className="flex flex-col md:flex-row p-4">
+    <div className="flex flex-col w-full md:flex-row p-4 md:p-[2rem]">
       {/* Product Image */}
      <div className="">
-     <div className="w-full  mb-3 relative">
+     <div className="  mb-3 relative">
         <img
           src={product.productImage[selectedImageIndex]}
           alt="Product"
@@ -77,18 +82,18 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
      </div>
 
       {/* Product Information */}
-      <div className="p-2 bg-gray-100 rounded-lg ">
+      <div className="p-2 rounded-lg md:w-[50%]">
         <div className="underline text-[1.4rem] pb-4">Product Information</div>
         <h1 className="text-gray-600 pb-4">Product Name: {product.productName}</h1>
-        <p className="text-gray-600 pb-4">Category: {product.productCategory}</p>
-        <p className="text-xl font-semibold pb-4">Price: ${product.productPrice}</p>
+        {/* <p className="text-gray-600 pb-4">Category: {product.productCategory}</p> */}
+        <p className="text-xl font-semibold pb-4">Price: ${product.productPrice ? product.productPrice : 0}</p>
         <p className="overflow-auto pb-4">{plainTextDescription}</p>
 
-        {product.productDiscount > 0 && (
+        {/* {product.productDiscount > 0 && (
           <p className="text-green-500 pb-4">Discount: {product.productDiscount}%</p>
-        )}
+        )} */}
 
-        <p
+        {/* <p
           className={`text-${
             product.isOutOfStock ? "red-500" : "green-600"
           } font-semibold pb-4`}
@@ -97,10 +102,11 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
         </p>
 
         <p>Product Code: {product.productCode}</p>
-        <p>Quantity Available: {product.quantity}</p>
+        <p>Quantity Available: {product.quantity}</p> */}
 
         {/* Buy Now Button */}
         <button
+          onClick={handleContact}
           className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300"
         >
           Buy Now

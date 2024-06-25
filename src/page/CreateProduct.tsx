@@ -75,6 +75,8 @@ function CreateProduct() {
     return urls;
   };
 
+  console.log(productprice)
+
   const handleRegister = async (e: React.FormEvent) => {
     
     e.preventDefault();
@@ -96,9 +98,6 @@ function CreateProduct() {
       setloading(false)
       return toast.error("max 4 image allowed")
     }
-
-    console.log(imageUrls)
-    
 
     const data: Product = {
       id: getRandomString(35, "qwertyuiopasdfhjklzxcvbnmQWERTYUIOPASDFHJKLZXCVBNM234567890"),
@@ -155,6 +154,7 @@ function CreateProduct() {
                 value={productDescription}
                 onChange={setProductDescription}
                 className="bg-gray-100 text-black"
+              
               />
             </Suspense>
           </div>
@@ -164,6 +164,7 @@ function CreateProduct() {
               className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
               onChange={(event) => setselectedCategory(event.target.value)}
+              required={true}
             >
               <option value="">Select category</option>
               <option value="Guitars">Guitars</option>
@@ -191,6 +192,7 @@ function CreateProduct() {
             placeholder="Price"
             value={productprice}
             onChange={(e) => setproductuctprice(e.target.value)}
+            required={true}
             className="w-full p-3 mb-4 bg-gray-700 rounded outline-none text-white placeholder-gray-500"
           />
 

@@ -35,6 +35,15 @@ function Dashboard() {
           </div>
 
 
+ 
+          <div className="shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] p-2 flex justify-center items-center  flex-col bg-white rounded-lg">
+            <h1 className="text-center font-extrabold text-[1.4rem]  p-2 text-[#58401d] ">Support</h1>
+            <p className="text-sm text-center">
+              The Support section hanle all record of contact sent from the user.  providing a
+              transparent and organized view of activities such as new message, or other relevant interactions within the system.
+            </p>
+             <Link to="/dashboard/contact" className="bg-[#febc5a] hover:bg-[#58401d] text-white font-bold py-2 px-4 rounded m-3 w-full text-center">Open</Link>
+          </div>
 
      
 

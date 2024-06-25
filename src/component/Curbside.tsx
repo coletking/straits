@@ -4,25 +4,16 @@ function Curbside() {
     <div className="py-16 ">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center py-6 px-10">
         <div className="">
-          <div className="font-bold text-blue-300 pb-1">STRAIT MUSIC SOUTH</div>
+          <div className="font-bold text-blue-300 pb-1">ADDRESS</div>
           <div className="pb-1 text-sm">
-            3201 Bee Caves Rd (Suite 140) (@ Walsh Tarlton & Bee Caves Rd)
-            AUSTIN, TX 78746
+          539 E 56th Ave
+          Denver, CO 80216
           </div>
           <div className="font-bold text-blue-300 pt-1">
-            PHONE: 512-476-6927
+            PHONE: +17022952693
           </div>
         </div>
 
-        <div className="">
-          <div className="font-bold text-blue-300 pb-1">STRAIT MUSIC NORTH</div>
-          <div className="pb-1 text-sm">
-            13945 HWY. 183 NORTH (@ Hwy. 620) AUSTIN, TX 78717
-          </div>
-          <div className="font-bold text-blue-300 pt-1">
-            PHONE: 512-918-3743
-          </div>
-        </div>
 
         <div className="flex flex-col items-center">
           <div
@@ -49,7 +40,7 @@ function Curbside() {
         </div>
       </div>
 
-      <div className="border-t-2 py-5 ">
+      {/* <div className="border-t-2 py-5 ">
         <div className="grid grid-cols-5 px-10">
         <div className="">
             <img src="/image/a.jpg" alt="" />
@@ -69,7 +60,7 @@ function Curbside() {
     
         </div>
       
-      </div>
+      </div> */}
     </div>
   );
 }
